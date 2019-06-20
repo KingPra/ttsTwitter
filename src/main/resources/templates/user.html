@@ -15,6 +15,7 @@
 			@<span th:text="${user.username}"></span></span>
 			</h2>
  			<h5>Joined <span th:text="${#dates.format(user.createdAt, 'M/d/yy')}"></span></h5>
+			<!-- <h1 th:text="${user.getDate}"></h1> -->
 			<h3>Tweets</h3>
 			<div class="list-group" th:each="tweet:${tweetList}">
 				<div class="list-group-item list-group-item-action">

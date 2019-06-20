@@ -20,9 +20,11 @@
 		</ul>
 			<div th:if="${not #lists.isEmpty(tweetList)}">
 				<h2>Tweets</h2>
- 				<div th:each="tweet:${tweetList}">
- 					<h5>@
-						<span th:text="${tweet.user.username}"></span> 
+ 				<div class="panel" th:each="tweet:${tweetList}">
+ 					<h5>
+ 					<span th:text="${tweet.user.firstName}"></span>
+ 					<span th:text="${tweet.user.lastName}"></span>
+						@<span th:text="${tweet.user.username}"></span> 
 					  	<span th:text="${tweet.date}"></span> 
 					</h5>
 					<div th:if="${#lists.isEmpty(tweetList)}">

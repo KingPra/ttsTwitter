@@ -69,16 +69,18 @@ public class TweetController {
 		User user = userService.getLoggedInUser();
 		if (!bindingResult.hasErrors()) {
 			tweet.setUser(user);
-			System.out.println("this is user in if statement " + user);
+//			System.out.println("this is user in if statement " + user);
 			tweetService.save(tweet);
-			System.out.println("this is user in if statement2 " + user);
-			model.addAttribute("successMessage", "Tweet successfully created!");
-			System.out.println("this is user in if statement3 " + user);
-			model.addAttribute("tweet", new Tweet());
-			System.out.println("this is user in if statement4 " + user);
+//			System.out.println("this is user in if statement2 " + user);
+			// model.addAttribute("successMessage", "Tweet successfully created!");
+//			System.out.println("this is user in if statement3 " + user);
+			// model.addAttribute("tweet", new Tweet());
+			model.addAttribute(getFeed("", model));
+
+//			System.out.println("this is user in if statement4 " + user);
 		}
 		System.out.println("hashy return");
-		return "newTweet";
+		return "feed";
 	}
 
 }

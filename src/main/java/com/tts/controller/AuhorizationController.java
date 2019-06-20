@@ -19,6 +19,7 @@ public class AuhorizationController {
 
 	@GetMapping("/login")
 	public String login() {
+		System.out.println("string string");
 		return "login";
 	}
 

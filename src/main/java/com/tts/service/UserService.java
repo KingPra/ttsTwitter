@@ -19,6 +19,7 @@ public class UserService {
 	private UserRepository userRepository;
 	private RoleRepository roleRepository;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	private Object dateFormat;
 
 	@Autowired
 	public UserService(UserRepository userRepository, RoleRepository roleRepository,
@@ -29,6 +30,7 @@ public class UserService {
 	}
 
 	public User findByUsername(String username) {
+		// formatTimestamps(userRepository.findByUsername(username));
 		return userRepository.findByUsername(username);
 	}
 
@@ -53,4 +55,21 @@ public class UserService {
 		return findByUsername(loggedInUsername);
 
 	}
+	// test
+
+//	private void formatTimestamps(User user) {
+//		String dateFormat;
+//		PrettyTime prettyTime = new PrettyTime();
+//		SimpleDateFormat simpleDate = new SimpleDateFormat("M/d/yy");
+//		Date now = new Date();
+//		long diffInMillies = Math.abs(now.getTime() - user.getCreatedAt().getTime());
+//		long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+//		if (diff > 3) {
+//			user.setDate(simpleDate.format(user.getCreatedAt()));
+//		} else {
+//			user.setDate(prettyTime.format(user.getCreatedAt()));
+//		}
+//
+//	}
+	// test
 }
